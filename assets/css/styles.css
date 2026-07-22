@@ -90,6 +90,7 @@
     color:var(--navy-900); background:#F5F4FB; margin-bottom:6px;
   }
   .megadrop a.row:hover{background:#EAE7FA;}
+  .megadrop a.row[aria-current="page"]{background:#EAE7FA; color:#3552E0;}
   .eyebrow-mini{font-size:10.5px; font-weight:700; letter-spacing:.08em; color:var(--ink-600); padding:0 12px 6px;}
 
   /* ===== HERO ===== */
@@ -254,6 +255,11 @@
   .tenant-success strong{display:block; color:#0B9A72; margin-bottom:8px;}
   .tenant-share{display:flex; gap:10px; margin-top:14px;}
   .tenant-share input{flex:1; min-width:0; border:1px solid #DCD8EE; border-radius:12px; padding:12px; color:var(--ink-600);}
+  .solution-form{display:block; margin-top:0;}
+  .solution-form .tenant-panel{background:#F8F7FC;}
+  .solution-note{
+    margin-top:14px; font-size:12.5px; color:var(--ink-600); line-height:1.55;
+  }
   .btn-purple{
     background:#6547D4; color:#fff; font-weight:700; font-size:14.5px; padding:13px 22px;
     border-radius:999px; border:none; cursor:pointer; display:inline-flex; align-items:center; gap:8px;
@@ -272,6 +278,37 @@
   }
   .tenant-blog-card span{font-family:'Space Mono',monospace; font-size:11px; color:#0B9A72; text-transform:uppercase;}
   .tenant-blog-card strong{display:block; color:var(--navy-900); margin-top:8px; line-height:1.45;}
+
+  .solution-dashboard{
+    margin-top:42px; background:var(--navy-950); color:#fff; border-radius:28px; padding:28px;
+    box-shadow:0 30px 70px rgba(11,8,36,0.18); overflow:hidden; position:relative;
+  }
+  .solution-dashboard::before{
+    content:''; position:absolute; width:220px; height:220px; border-radius:50%; right:-80px; top:-80px;
+    background:rgba(23,217,163,0.16);
+  }
+  .dash-head{display:flex; justify-content:space-between; gap:18px; align-items:flex-start; position:relative; z-index:1; margin-bottom:24px;}
+  .dash-head h3{font-size:22px; margin:0 0 8px;}
+  .dash-head p{margin:0; color:#BEB8E2; font-size:14px; line-height:1.6;}
+  .dash-badge{background:rgba(23,217,163,0.14); color:var(--teal-300); border:1px solid rgba(124,240,206,0.3); border-radius:999px; padding:8px 12px; font-size:12px; font-weight:700; white-space:nowrap;}
+  .dash-stats{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; position:relative; z-index:1; margin-bottom:18px;}
+  .dash-stat{background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.1); border-radius:18px; padding:16px;}
+  .dash-stat span{display:block; color:#BEB8E2; font-size:12px; margin-bottom:8px;}
+  .dash-stat strong{display:block; font-family:'Sora',sans-serif; font-size:24px;}
+  .dash-grid{display:grid; grid-template-columns:1.25fr 0.75fr; gap:16px; position:relative; z-index:1;}
+  .dash-panel{background:#fff; color:var(--ink-900); border-radius:18px; padding:18px;}
+  .dash-panel h4{font-family:'Inter',sans-serif; font-size:14px; margin:0 0 14px; color:var(--navy-900);}
+  .dash-row{display:grid; grid-template-columns:1.2fr 0.8fr 0.8fr; gap:10px; align-items:center; padding:12px 0; border-top:1px solid #ECE9F7; font-size:13px;}
+  .dash-row:first-of-type{border-top:0;}
+  .dash-row b{color:var(--navy-900);}
+  .dash-row span{color:var(--ink-600);}
+  .dash-status{display:inline-flex; justify-content:center; border-radius:999px; padding:6px 10px; background:#EFFCF7; color:#0B9A72; font-weight:700; font-size:11px; font-style:normal;}
+  .dash-generated{display:grid; gap:10px;}
+  .dash-generated li{
+    list-style:none; background:#F7F6FC; border:1px solid #ECE9F7; border-radius:14px; padding:12px; font-size:13px;
+  }
+  .dash-generated strong{display:block; color:var(--navy-900); margin-bottom:4px;}
+  .dash-generated span{color:var(--ink-600);}
 
   /* ===== STEPS ===== */
   .steps{
@@ -348,6 +385,9 @@
     .feat-grid{grid-template-columns:repeat(2,1fr);}
     .tenant-hero{grid-template-columns:1fr;}
     .tenant-blog-grid{grid-template-columns:1fr;}
+    .dash-stats{grid-template-columns:1fr;}
+    .dash-grid{grid-template-columns:1fr;}
+    .dash-head{flex-direction:column;}
     .steps-row{grid-template-columns:1fr 1fr; row-gap:36px;}
     .steps-row::before{display:none;}
     .testi-grid{grid-template-columns:1fr;}
@@ -366,6 +406,7 @@
     .tenant-line{width:34px;}
     .tenant-share{flex-direction:column;}
     .tenant-share input,.tenant-share button{width:100%;}
+    .dash-row{grid-template-columns:1fr;}
   }
   .page-main{margin-top:-56px;}
   .page-main .tenant-page{padding-top:144px;}
