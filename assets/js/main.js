@@ -63,3 +63,25 @@ document.querySelectorAll('.nav-item').forEach(item=>{
       }
     });
   }
+
+const progressBar = document.getElementById('progressBar');
+const backTop = document.getElementById('backTop');
+if(progressBar){
+  window.addEventListener('scroll', ()=>{
+    const h = document.documentElement;
+    const scrollable = h.scrollHeight - h.clientHeight;
+    const scrolled = scrollable > 0 ? (h.scrollTop / scrollable) * 100 : 0;
+    progressBar.style.width = `${scrolled}%`;
+    if(backTop) backTop.classList.toggle('show', h.scrollTop > 500);
+  });
+}
+if(backTop){
+  backTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+}
+
+document.querySelectorAll('.cat-pill').forEach(pill=>{
+  pill.addEventListener('click', ()=>{
+    document.querySelectorAll('.cat-pill').forEach(item=>item.classList.remove('active'));
+    pill.classList.add('active');
+  });
+});
