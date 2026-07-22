@@ -85,3 +85,28 @@ document.querySelectorAll('.cat-pill').forEach(pill=>{
     pill.classList.add('active');
   });
 });
+
+const tocLinks = document.querySelectorAll('.toc-link');
+if(tocLinks.length){
+  const sections = Array.from(tocLinks).map(link => document.querySelector(link.getAttribute('href')));
+  window.addEventListener('scroll', ()=>{
+    let current = sections[0];
+    sections.forEach(section=>{
+      if(section && section.getBoundingClientRect().top < 140) current = section;
+    });
+    if(current){
+      tocLinks.forEach(link=> link.classList.toggle('active', link.getAttribute('href') === `#${current.id}`));
+    }
+  });
+}
+
+document.querySelectorAll('[data-copy-current-link]').forEach(button=>{
+  button.addEventListener('click', async ()=>{
+    try{
+      await navigator.clipboard.writeText(window.location.href);
+      button.setAttribute('title', 'Link copiado');
+    } catch(error){
+      button.setAttribute('title', 'Copie o link da barra de endereço');
+    }
+  });
+});

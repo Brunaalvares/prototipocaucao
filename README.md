@@ -10,6 +10,7 @@ Protótipo estático da Caução Digital by Avalyst.
 - `imobiliarias/index.html` — página de cadastro para imobiliárias.
 - `corretores/index.html` — página de cadastro para corretores.
 - `blog/index.html` — página de artigos e conteúdos do blog.
+- `blog/fiador-seguro-fianca-ou-caucao-digital/index.html` — página de post do blog.
 - `assets/css/styles.css` — estilos compartilhados.
 - `assets/js/main.js` — interações compartilhadas do menu e do formulário de indicação.
 
